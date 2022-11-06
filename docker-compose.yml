@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+ blog:
+   build:
+     context: .
+     dockerfile: docker/Dockerfile
+   container_name: vuepress-blog
+   tty: true
+   ports:
+     - "8080:8080"
+     - "9229:9229"
+   volumes:
+     - ".:/workspace"
+   command: yarn dev
