@@ -1,6 +1,25 @@
 module.exports = {
     title: 'dela-sh.info blog',
     description: 'kasuteraの個人ブログ',
+    /**
+     * https://github.com/vuejs/vuepress/issues/2713#issuecomment-806621348
+     */
+    head: [
+        [
+            'script',
+            {
+                async: true,
+                src: 'https://www.googletagmanager.com/gtag/js?id=G-PM8R1MLD90',
+            },
+        ],
+        [
+            'script',
+            {},
+            [
+                "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-PM8R1MLD90');",
+            ],
+        ],
+    ],
     locales: {
         '/': {
             lang: 'ja-JP',
