@@ -9,8 +9,8 @@
     },
     "repository": "/workspace",
     "scripts": {
-        "dev": "NODE_OPTIONS=--openssl-legacy-provider yarn vuepress dev blog",
-        "build": "NODE_OPTIONS=--openssl-legacy-provider yarn vuepress build blog"
+        "dev": "NODE_OPTIONS=--openssl-legacy-provider yarn run vuepress dev blog",
+        "build": "NODE_OPTIONS=--openssl-legacy-provider yarn run vuepress build blog"
     },
     "license": "MIT",
     "dependencies": {
