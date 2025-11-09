@@ -1,6 +1,6 @@
 # workspace
 
-> 
+blog.dela-sh.info
 
 ## Development
 
