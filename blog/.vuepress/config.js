@@ -1,4 +1,28 @@
+// Require BASE env var: do not provide a default.
+// Usage examples:
+//   BASE='/blog-vuepress/' yarn build    # GitHub Pages repository page
+//   BASE='/' yarn build                   # root domain
+//   BASE='./' yarn build                  # build for opening index.html locally
+const rawBase = process.env.BASE;
+if (!rawBase) {
+    throw new Error(
+        "Environment variable BASE is required. Example: BASE='/blog-vuepress/' yarn build"
+    );
+}
+
+let normalizedBase;
+if (rawBase === './') {
+    // allow explicit local relative build
+    normalizedBase = './';
+} else {
+    normalizedBase = rawBase;
+    if (!normalizedBase.startsWith('/')) normalizedBase = '/' + normalizedBase;
+    if (!normalizedBase.endsWith('/')) normalizedBase = normalizedBase + '/';
+}
+
 module.exports = {
+    base: normalizedBase,
+
     title: 'dela-sh.info blog',
     description: 'kasuteraの個人ブログ',
     /**
