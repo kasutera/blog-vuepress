@@ -27,7 +27,7 @@ jobs:
           yarn install --frozen-lockfile || yarn install
 
       - name: Build site
-        run: "yarn build:pages"
+        run: "yarn build:custom"
 
       - name: Upload built site for GitHub Pages
         uses: actions/upload-pages-artifact@v4
